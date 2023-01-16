@@ -1,78 +1,39 @@
-import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import { toast, Toaster } from 'react-hot-toast';
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { AiOutlineArrowRight } from 'react-icons/ai';
+import img1 from "../../Assets/Guarantee-.webp"
 
 
 const Home = () => {
+    return (
+            <div>
+                <p className='text-center text-3xl text-teal-700 mt-5 mb-2 font-semibold'>Admin Dashboard</p>
+                <hr />
 
-  const { data: students=[], refetch, isLoading, } = useQuery({
-    queryKey: ["students"],
-    queryFn: () =>
-      fetch(`http://localhost:5000/students`)
-      .then((res) => res.json()),
-  });
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 lg:mx-20 text-center'>
 
-  const handleDelete = (id) =>{
-    fetch(`http://localhost:5000/students/${id}`,{
-      method: "DELETE"
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.deletedCount > 0) {
-        console.log(data);
-        toast.success("Deleted Successfully");
-        refetch();
-      }
-    })
-  }
+                <div className='m-10 p-10 shadow-lg border border-slate-300 bg-slate-100 rounded-lg'>
+                    <div className='flex justify-center mb-5'><img src={img1} alt="" /></div>
+                     <p className='my-5 text-2xl'>All Students</p>
+                    <Link to="/students"><button className='btn'>Students <AiOutlineArrowRight className='ml-4 text-xl'/></button></Link>
+                </div>
 
+                <div className='m-10 p-10 shadow-lg border border-slate-300 bg-slate-100 rounded-lg'>
+                    <div className='flex justify-center mb-5'><img src={img1} alt="" /></div>
+                     <p className='my-5 text-2xl'>All Teachers</p>
+                    <Link to="/teacher"><button className='btn'>Teachers <AiOutlineArrowRight className='ml-4 text-xl'/></button></Link>
+                </div>
 
-  if(isLoading){
-    <p>Loading.......</p>
-  }
+                <div className='m-10 p-10 shadow-lg border border-slate-300 bg-slate-100 rounded-lg'>
+                    <div className='flex justify-center mb-5'><img src={img1} alt="" /></div>
+                     <p className='my-5 text-2xl'>All Students</p>
+                    <Link to=""><button disabled className='btn'>Students <AiOutlineArrowRight className='ml-4 text-xl'/></button></Link>
+                </div>
 
-  return (
-    <div className="text-center my-16 mx-16">
-      <div className="overflow-x-auto">
-        <table className="table w-full">
-          <thead>
-            <tr className="text-slate-800">
-              <th></th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Department</th>
-              <th>Address</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {students.map((student, i) => (
-              <tr key={student._id}>
-                <th>{i+1}</th>
-                <td>
-                {student.name} <br />
-                {/* {student.gender} <br />
-                {student.age} <br />
-                {student.birthDate} */}
-                </td>
-                <td>{student.email}</td>
-                <td>{student.phone}</td>
-                <td>{student.department}</td>
-                <td>{student.address}</td>
-                <td > 
-                <Link to = {`/update/${student._id}`}><button className="btn mr-4">Edit</button></Link>
-                <button onClick={()=>handleDelete(student._id)} className="btn">Delete</button>
-                 </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <Toaster/>
-    </div>
-  );
+            </div>
+
+            </div>
+    );
 };
 
 export default Home;
