@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "name": "Terry",
+        "age": 50,
+        "gender": "male",
+        "email": "atuny0@sohu.com",
+        "phone": "+63 791 675 8914",
+        "birthDate": "2000-12-25",
+        "image": "https://robohash.org/hicveldicta.png",
+        "department": "Marketing",
+        "address": "1745 T Street Southeast, Washington, "
+
+    },
+    {
+        "id": 2,
+        "name": "Terry",
+        "age": 50,
+        "gender": "male",
+        "email": "atuny0@sohu.com",
+        "phone": "+63 791 675 8914",
+        "birthDate": "2000-12-25",
+        "image": "https://robohash.org/hicveldicta.png",
+        "department": "Marketing",
+        "address": "1745 T Street Southeast, Washington, "
+
+    },
+    {
+        "id": 3,
+        "name": "Terry",
+        "age": 50,
+        "gender": "male",
+        "email": "atuny0@sohu.com",
+        "phone": "+63 791 675 8914",
+        "birthDate": "2000-12-25",
+        "image": "https://robohash.org/hicveldicta.png",
+        "department": "Marketing",        
+        "address": "1745 T Street Southeast, Washington"
+    }
+
+]
