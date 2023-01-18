@@ -22,9 +22,12 @@ const Update = () => {
     };
     console.log(student);
 
-    fetch(`http://localhost:5000/students/${_id}`, {
+    fetch(`https://crud-task-server.vercel.app/users/${_id}`, {
       method: "PUT",
-      headers: { "content-type": "application/json" },
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
       body: JSON.stringify(student),
     })
       .then((res) => res.json())
@@ -32,7 +35,7 @@ const Update = () => {
         if (data.acknowledged > 0) {
           console.log(data);
           toast.success("Updated Successfylly");
-          navigate("/");
+          navigate("/students");
         }
       });
   };
@@ -40,10 +43,16 @@ const Update = () => {
   return (
     <div className="hero-content  mt-5">
       <div className="card shadow-xl bg-base-100 border mx-auto  border-slate-200 w-full lg:w-10/12">
-        <p className="text-center mt-4 font-semibold text-xl">Edit Student Details Information</p>
+        <p className="text-center mt-4 font-semibold text-xl">
+          Edit Student Details Information
+        </p>
 
         <div className="justify-center flex mt-5">
-        <img style={{ width: "130px", height: "130px", borderRadius: "50%" }} src={image} alt="" />
+          <img
+            style={{ width: "130px", height: "130px", borderRadius: "50%" }}
+            src={image}
+            alt=""
+          />
         </div>
         <div className="card-body">
           <form onSubmit={handleSubmit(handleUpdate)}>

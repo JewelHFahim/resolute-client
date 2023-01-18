@@ -1,39 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { AiOutlineArrowRight } from 'react-icons/ai';
-import img1 from "../../Assets/Guarantee-.webp"
-
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Home.css";
 
 const Home = () => {
-    return (
-            <div>
-                <p className='text-center text-3xl text-teal-700 mt-5 mb-2 font-semibold'>Admin Dashboard</p>
-                <hr />
-
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 lg:mx-20 text-center'>
-
-                <div className='m-10 p-10 shadow-lg border border-slate-300 bg-slate-100 rounded-lg'>
-                    <div className='flex justify-center mb-5'><img src={img1} alt="" /></div>
-                     <p className='my-5 text-2xl'>All Students</p>
-                    <Link to="/students"><button className='btn'>Students <AiOutlineArrowRight className='ml-4 text-xl'/></button></Link>
-                </div>
-
-                <div className='m-10 p-10 shadow-lg border border-slate-300 bg-slate-100 rounded-lg'>
-                    <div className='flex justify-center mb-5'><img src={img1} alt="" /></div>
-                     <p className='my-5 text-2xl'>All Teachers</p>
-                    <Link to="/teacher"><button className='btn'>Teachers <AiOutlineArrowRight className='ml-4 text-xl'/></button></Link>
-                </div>
-
-                <div className='m-10 p-10 shadow-lg border border-slate-300 bg-slate-100 rounded-lg'>
-                    <div className='flex justify-center mb-5'><img src={img1} alt="" /></div>
-                     <p className='my-5 text-2xl'>All Students</p>
-                    <Link to=""><button disabled className='btn'>Students <AiOutlineArrowRight className='ml-4 text-xl'/></button></Link>
-                </div>
-
-            </div>
-
-            </div>
-    );
+  return (
+    <div className="hero min-h-screen bg-img">
+      <div className="hero-overlay bg-opacity-60"></div>
+      <div className="hero-content text-center text-neutral-content">
+        <div className="max-w-md">
+          <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+          <p className="mb-5">Lets Explore By login...</p>
+          <Link to="/login">
+            <button className="btn bg-slate-900 px-12 shadow-2xl border border-slate-500">
+              Get Started
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Home;
