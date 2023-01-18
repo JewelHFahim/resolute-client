@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../Context/AuthContext";
 import "./Home.css";
 
 const Home = () => {
+
+  const {isLoading} = useContext(UserContext)
+
+if (isLoading) {
+    <progress className="progress progress-success w-full"></progress>;
+  }
+
   return (
     <div className="hero min-h-screen bg-img">
       <div className="hero-overlay bg-opacity-60"></div>

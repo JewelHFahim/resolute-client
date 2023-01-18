@@ -51,14 +51,6 @@ const AuthContext = ({ children }) => {
     };
   }, []);
 
-  // const [dbImgs, setDbImgs] = useState([]);
-  // useEffect(()=>{
-  //   fetch(`https://crud-task-server.vercel.app/users`)
-  //   .then(res => res.json())
-  //   .then(data => setDbImgs(data))
-  // },[])
-
-  // const userImg = dbImgs.map(uimg => <li key = {uimg._id}>{uimg}</li>)
 
   const authInfo = {
     user,

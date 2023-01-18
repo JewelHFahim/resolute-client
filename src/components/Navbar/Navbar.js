@@ -7,7 +7,7 @@ import useTeacher from '../../Hooks/useTeacher';
 
 const Navbar = () => {
 
-  const {user, userImg, logOut} = useContext(UserContext);
+  const {user, userImg, isLoading, logOut} = useContext(UserContext);
 
   const [isAdmin] = useAdmin(user?.email);
   const [isStudent] = useStudent(user?.email);
@@ -41,6 +41,12 @@ const Navbar = () => {
       .then(()=>{})
       .catch(error => console.log(error))
     }
+
+
+    if (isLoading) {
+        <progress className="progress progress-success w-full"></progress>;
+      }
+
 
     return (
         <div> 

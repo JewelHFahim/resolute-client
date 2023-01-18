@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import img1 from "../../Assets/Guarantee-.webp"
+import { UserContext } from '../../Context/AuthContext';
 
 
 const AdminDashBoard = () => {
 
+    const {isLoading} = useContext(UserContext);
+
+    
+if (isLoading) {
+    <progress className="progress progress-success w-full"></progress>;
+  }
 
 
     return (

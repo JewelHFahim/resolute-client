@@ -7,7 +7,7 @@ const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
 
-  const price = 12;
+  // const price = 12;
 
   // useEffect(() => {
   //     fetch("https://crud-task-server.vercel.app/create-payment-intent", {

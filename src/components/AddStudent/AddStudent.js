@@ -57,6 +57,7 @@ const AddStudent = () => {
         }
       });
   };
+  
 
   return (
     <div className="hero-content  mt-10">

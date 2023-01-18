@@ -79,7 +79,6 @@ const EnrolledCourses = () => {
                   </div>
                 </td>
                 <td>
-                  {" "}
                   <p className=" font-bold"> ${enc.course.price} </p>{" "}
                 </td>
                 <td>{enc.duration} month</td>
