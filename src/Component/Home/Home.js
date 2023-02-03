@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../Context/AuthContext";
 
 const Home = () => {
-
   const {user} = useContext(UserContext)
   
   return (
