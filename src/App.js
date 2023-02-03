@@ -1,8 +1,8 @@
 import { Toaster } from "react-hot-toast";
 import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home/Home";
-import router from "./Router/Router";
+import Home from "./Component/Home/Home";
+import router from "./Component/Router/Router";
 
 function App() {
   return (
